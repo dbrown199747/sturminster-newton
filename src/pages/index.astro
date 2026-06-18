@@ -32,13 +32,12 @@ import Base from '../layouts/Base.astro'
       <p class="text-stone-600 leading-relaxed mb-4">
         Set in the charming old market town of Sturminster Newton, Poets Corner Café
         offers a wide choice of home-cooked food and drink at very reasonable prices.
-        Whether you're after a hearty full English breakfast, a light lunch, a classic
-        cream tea, or something a little more adventurous like our home-made moussaka
-        or baklava, there's something here for everyone.
+        Whether you fancy a full English breakfast, a freshly made sandwich or toastie,
+        a hearty baked potato, or our popular Mousaka — there's something here for everyone.
       </p>
       <p class="text-stone-600 leading-relaxed">
-        Family-friendly with a dedicated kids' menu, indoor and outdoor seating,
-        and a takeaway service — we're your perfect stop in the Blackmore Vale.
+        Family-friendly, with indoor seating and a takeaway service.
+        We're your perfect stop in the heart of the Blackmore Vale.
       </p>
     </div>
     <div class="grid grid-cols-2 gap-3">
@@ -55,10 +54,10 @@ import Base from '../layouts/Base.astro'
       <h2 class="text-3xl font-bold text-center text-stone-800 mb-8">What we offer</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {[
-          { icon: '🍳', title: 'All-Day Breakfast', desc: 'Full English, bacon rolls, toast — served all day.' },
-          { icon: '🥗', title: 'Light Lunches', desc: 'Sandwiches, soups, salads and hot mains.' },
-          { icon: '🫖', title: 'Cream Teas', desc: 'Freshly baked scones with jam and clotted cream.' },
-          { icon: '🍰', title: 'Cakes & Treats', desc: 'Home-made cakes, baklava and daily specials.' },
+          { icon: '🍳', title: 'All-Day Breakfast', desc: 'Full English or vegetarian breakfast, bacon, sausage and egg rolls.' },
+          { icon: '🥪', title: 'Sandwiches & Toasties', desc: 'Freshly made sandwiches and toasted sandwiches, all with coleslaw & salad.' },
+          { icon: '🍽️', title: 'Hot Dishes', desc: 'Baked potatoes, pasta, burgers, platters and our famous Mousaka.' },
+          { icon: '☕', title: 'Drinks', desc: 'Teas, coffees, hot chocolate, milkshakes and cold drinks.' },
         ].map(({ icon, title, desc }) => (
           <div class="bg-white rounded-xl p-6 text-center shadow-sm">
             <div class="text-4xl mb-3">{icon}</div>
