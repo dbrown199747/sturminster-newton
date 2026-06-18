@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro'
+---
+<Base title="Contact" description="Contact Poets Corner Café in Sturminster Newton. Find our address, phone number, opening hours and map.">
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <h1 class="text-4xl font-bold text-stone-800 mb-2">Find Us</h1>
+    <p class="text-stone-500 mb-10">We'd love to see you — pop in any time during opening hours.</p>
+
+    <div class="grid md:grid-cols-2 gap-10 mb-12">
+
+      <!-- Contact details -->
+      <div class="space-y-8">
+
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h2 class="font-bold text-stone-800 text-lg mb-3 flex items-center gap-2">
+            <span>📍</span> Address
+          </h2>
+          <address class="not-italic text-stone-600 leading-relaxed">
+            Poets Corner Café<br/>
+            Station Road<br/>
+            Sturminster Newton<br/>
+            Dorset, DT10 1BB
+          </address>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h2 class="font-bold text-stone-800 text-lg mb-3 flex items-center gap-2">
+            <span>📞</span> Telephone
+          </h2>
+          <a href="tel:+441258473723" class="text-amber-700 font-semibold text-lg hover:text-amber-600 transition-colors">
+            01258 473723
+          </a>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h2 class="font-bold text-stone-800 text-lg mb-4 flex items-center gap-2">
+            <span>🕐</span> Opening Hours
+          </h2>
+          <table class="w-full text-stone-600">
+            <tbody>
+              {[
+                ['Monday', '08:30 – 16:00'],
+                ['Tuesday', '08:30 – 16:00'],
+                ['Wednesday', '08:30 – 16:00'],
+                ['Thursday', '08:30 – 16:00'],
+                ['Friday', '08:30 – 16:00'],
+                ['Saturday', '08:30 – 16:00'],
+                ['Sunday', 'Closed'],
+              ].map(([day, hours]) => (
+                <tr class="border-b border-stone-100 last:border-0">
+                  <td class="py-2 font-medium">{day}</td>
+                  <td class={`py-2 text-right ${hours === 'Closed' ? 'text-red-500' : 'text-stone-600'}`}>{hours}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-amber-100 border border-amber-300 rounded-xl p-5">
+          <p class="text-stone-700 text-sm">
+            <strong>Takeaway available.</strong> We also offer kerbside pickup.
+            Please call ahead if you'd like to order for collection.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Google Map -->
+      <div class="flex flex-col gap-4">
+        <div class="rounded-xl overflow-hidden shadow-sm flex-1 min-h-80">
+          <iframe
+            title="Poets Corner Café map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.908!2d-2.3053!3d50.9278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4872efb0a5c56c85%3A0x8a1bcfed0bce65a8!2sPoets%20Corner%20Cafe!5e0!3m2!1sen!2suk!4v1718000000000!5m2!1sen!2suk"
+            width="100%"
+            height="100%"
+            style="border:0; min-height: 320px;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <a
+          href="https://www.google.com/maps/search/Poets+Corner+Cafe+Station+Rd+Sturminster+Newton+DT10+1BB"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-center bg-stone-800 text-amber-100 font-medium py-3 rounded-xl hover:bg-stone-700 transition-colors"
+        >
+          Open in Google Maps ↗
+        </a>
+      </div>
+
+    </div>
+
+    <!-- How to find us -->
+    <section class="bg-white rounded-xl p-6 shadow-sm">
+      <h2 class="font-bold text-stone-800 text-lg mb-3">How to Find Us</h2>
+      <p class="text-stone-600 leading-relaxed">
+        We're located on Station Road in the centre of Sturminster Newton, close to the town
+        square and within easy walking distance of the main car parks. If you're coming by
+        car, follow signs for the town centre — there is free parking available nearby.
+        Bus services stop in the town square, a short walk from the café.
+      </p>
+    </section>
+
+  </div>
+
+</Base>

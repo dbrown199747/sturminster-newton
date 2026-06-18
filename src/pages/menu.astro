@@ -1,0 +1,150 @@
+---
+import Base from '../layouts/Base.astro'
+---
+<Base title="Menu" description="Full menu at Poets Corner Café – breakfasts, lunches, cream teas, drinks and more in Sturminster Newton.">
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <h1 class="text-4xl font-bold text-stone-800 mb-2">Our Menu</h1>
+    <p class="text-stone-500 mb-10">
+      A wide choice of home-cooked food and drink at very reasonable prices.
+      We're happy to make small changes to suit your needs — just ask!
+    </p>
+
+    <!-- Breakfasts -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-amber-700 border-b border-amber-200 pb-2 mb-6">🍳 Breakfasts</h2>
+      <p class="text-stone-500 text-sm mb-4 italic">Served all day</p>
+      <div class="space-y-3">
+        {[
+          { name: 'Full English Breakfast', desc: 'Bacon, eggs, sausage, beans, tomato, mushrooms & toast' },
+          { name: 'Vegetarian Breakfast', desc: 'Eggs, beans, tomato, mushrooms, hash brown & toast' },
+          { name: 'Bacon Roll', desc: 'Freshly cooked bacon in a soft roll with your choice of sauce' },
+          { name: 'Egg on Toast', desc: 'Fried, poached or scrambled egg on thick-cut toast' },
+          { name: 'Toast & Preserves', desc: 'Thick-cut toast with butter, jam or marmalade' },
+        ].map(({ name, desc }) => (
+          <div class="flex justify-between items-start bg-white rounded-lg p-4 shadow-sm">
+            <div>
+              <p class="font-medium text-stone-800">{name}</p>
+              <p class="text-stone-500 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Light Lunches -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-amber-700 border-b border-amber-200 pb-2 mb-6">🥗 Light Lunches</h2>
+      <div class="space-y-3">
+        {[
+          { name: 'Soup of the Day', desc: 'Home-made soup served with a crusty roll' },
+          { name: 'Sandwiches', desc: 'Choose your filling on white, brown or granary bread' },
+          { name: 'Jacket Potato', desc: 'Baked potato with a choice of fillings' },
+          { name: 'Ploughman\'s Lunch', desc: 'Cheese, pickle, salad, crusty bread and chutney' },
+          { name: 'Quiche of the Day', desc: 'Home-made quiche served with salad' },
+        ].map(({ name, desc }) => (
+          <div class="flex justify-between items-start bg-white rounded-lg p-4 shadow-sm">
+            <div>
+              <p class="font-medium text-stone-800">{name}</p>
+              <p class="text-stone-500 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Hot Mains -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-amber-700 border-b border-amber-200 pb-2 mb-6">🍽️ Hot Mains</h2>
+      <p class="text-stone-500 text-sm mb-4 italic">English &amp; Turkish specialities</p>
+      <div class="space-y-3">
+        {[
+          { name: 'Moussaka', desc: 'Traditional Turkish-style moussaka with minced lamb and béchamel' },
+          { name: 'Chicken Casserole', desc: 'Slow-cooked chicken with seasonal vegetables' },
+          { name: 'Lasagne', desc: 'Home-made beef lasagne with salad and garlic bread' },
+          { name: 'Daily Special', desc: 'Ask a member of staff for today\'s special' },
+        ].map(({ name, desc }) => (
+          <div class="flex justify-between items-start bg-white rounded-lg p-4 shadow-sm">
+            <div>
+              <p class="font-medium text-stone-800">{name}</p>
+              <p class="text-stone-500 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Cream Teas & Cakes -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-amber-700 border-b border-amber-200 pb-2 mb-6">🫖 Cream Teas &amp; Cakes</h2>
+      <div class="space-y-3">
+        {[
+          { name: 'Cream Tea', desc: 'Freshly baked scone with clotted cream, jam and a pot of tea' },
+          { name: 'Home-Made Baklava', desc: 'Rich, sweet pastry with nuts and honey — a Turkish speciality' },
+          { name: 'Cake of the Day', desc: 'Selection of home-made cakes — ask about today\'s choices' },
+          { name: 'Toasted Teacake', desc: 'Warm toasted teacake with butter' },
+        ].map(({ name, desc }) => (
+          <div class="flex justify-between items-start bg-white rounded-lg p-4 shadow-sm">
+            <div>
+              <p class="font-medium text-stone-800">{name}</p>
+              <p class="text-stone-500 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Kids Menu -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-amber-700 border-b border-amber-200 pb-2 mb-6">👧 Kids' Menu</h2>
+      <div class="space-y-3">
+        {[
+          { name: 'Mini Breakfast', desc: 'Egg, bacon, sausage and toast' },
+          { name: 'Kids\' Sandwich', desc: 'Small sandwich with choice of filling and a drink' },
+          { name: 'Beans on Toast', desc: 'Classic baked beans on buttered toast' },
+        ].map(({ name, desc }) => (
+          <div class="flex justify-between items-start bg-white rounded-lg p-4 shadow-sm">
+            <div>
+              <p class="font-medium text-stone-800">{name}</p>
+              <p class="text-stone-500 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Drinks -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-amber-700 border-b border-amber-200 pb-2 mb-6">☕ Drinks</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <h3 class="font-semibold text-stone-700 mb-3">Hot Drinks</h3>
+          <div class="space-y-2">
+            {['Tea (English Breakfast & Herbal)', 'Freshly Brewed Coffee', 'Cappuccino', 'Latte', 'Americano', 'Hot Chocolate'].map(item => (
+              <div class="bg-white rounded-lg px-4 py-3 shadow-sm text-stone-700 text-sm">{item}</div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-stone-700 mb-3">Cold Drinks</h3>
+          <div class="space-y-2">
+            {['Shmoo Milkshakes', 'Fresh Juices', 'Soft Drinks', 'Sparkling Water', 'Beer (canned)', 'Wine'].map(item => (
+              <div class="bg-white rounded-lg px-4 py-3 shadow-sm text-stone-700 text-sm">{item}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-amber-100 border border-amber-300 rounded-xl p-6 text-center">
+      <p class="text-stone-700">
+        Our menu changes regularly to make the most of seasonal produce.
+        If you have any dietary requirements or allergies, please let us know —
+        we're always happy to help.
+      </p>
+    </div>
+
+  </div>
+
+</Base>

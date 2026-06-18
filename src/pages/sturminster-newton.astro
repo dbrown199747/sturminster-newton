@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro'
+---
+<Base title="Sturminster Newton" description="Discover Sturminster Newton – a beautiful old market town in the heart of the Blackmore Vale, Dorset, steeped in history and Thomas Hardy connections.">
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <h1 class="text-4xl font-bold text-stone-800 mb-2">Sturminster Newton</h1>
+    <p class="text-amber-700 font-medium mb-10">In the heart of the Blackmore Vale, Dorset</p>
+
+    <!-- Hero image -->
+    <img
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"
+      alt="Dorset countryside"
+      class="w-full h-72 object-cover rounded-2xl mb-10 shadow-md"
+    />
+
+    <!-- Intro -->
+    <section class="prose prose-stone max-w-none mb-12">
+      <p class="text-lg text-stone-700 leading-relaxed mb-6">
+        Sturminster Newton is a picturesque old market town nestled in the Blackmore Vale in
+        north Dorset, close to the River Stour. With its medieval bridge, historic mill, and
+        thriving local community, it's one of the most charming towns in the county.
+      </p>
+      <p class="text-stone-600 leading-relaxed mb-6">
+        The town sits within an Area of Outstanding Natural Beauty and is surrounded by
+        quintessential rolling Dorset countryside — the very landscape that inspired the
+        novels of Thomas Hardy.
+      </p>
+    </section>
+
+    <!-- Thomas Hardy connection -->
+    <section class="bg-amber-100 border-l-4 border-amber-400 rounded-r-xl p-6 mb-12">
+      <h2 class="text-2xl font-bold text-stone-800 mb-3">A Thomas Hardy Connection</h2>
+      <p class="text-stone-600 leading-relaxed mb-3">
+        Thomas Hardy lived in Sturminster Newton from 1876 to 1878 with his wife Emma,
+        renting a house called Riverside Villa from local poet and tailor <strong>Robert Young</strong>
+        — after whom our café takes its inspiration. Hardy described this as "our happiest time."
+      </p>
+      <p class="text-stone-600 leading-relaxed">
+        It was here that Hardy began writing <em>The Return of the Native</em> and later
+        drew on the landscape and characters of the Blackmore Vale for
+        <em>Tess of the D'Urbervilles</em> — two of the greatest novels in the English language.
+      </p>
+    </section>
+
+    <!-- Things to see -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-stone-800 mb-6">Things to See &amp; Do Nearby</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          {
+            title: 'Sturminster Newton Mill',
+            desc: 'A beautifully restored 18th-century working watermill on the River Stour, open to visitors throughout the year.',
+          },
+          {
+            title: 'The Medieval Bridge',
+            desc: 'One of Dorset\'s finest medieval bridges, spanning the River Stour — a lovely spot for a stroll.',
+          },
+          {
+            title: 'Blackmore Vale',
+            desc: 'Miles of stunning walking and cycling routes through Hardy\'s "Vale of the Little Dairies."',
+          },
+          {
+            title: 'Weekly Market',
+            desc: 'Sturminster Newton holds a traditional Monday market — a great place to pick up local produce.',
+          },
+          {
+            title: 'Dorset Countryside',
+            desc: 'Explore the surrounding villages, ancient churches, and sweeping hilltop views across north Dorset.',
+          },
+          {
+            title: 'Local Pubs & Shops',
+            desc: 'The town has a thriving independent high street, pubs, and community events year-round.',
+          },
+        ].map(({ title, desc }) => (
+          <div class="bg-white rounded-xl p-5 shadow-sm">
+            <h3 class="font-semibold text-stone-800 mb-1">{title}</h3>
+            <p class="text-stone-500 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <div class="bg-stone-800 text-amber-50 rounded-2xl p-8 text-center">
+      <p class="text-xl font-semibold mb-2">Visiting the area?</p>
+      <p class="text-amber-100/80 mb-6">
+        Make Poets Corner Café your base — a perfect stop for breakfast or lunch
+        before exploring everything the Blackmore Vale has to offer.
+      </p>
+      <a href="/contact" class="inline-block bg-amber-400 text-stone-900 font-semibold px-6 py-3 rounded-lg hover:bg-amber-300 transition-colors">
+        Find Us
+      </a>
+    </div>
+
+  </div>
+
+</Base>
