@@ -5,7 +5,7 @@ interface Props {
   title: string
   description?: string
 }
-const { title, description = 'Poets Corner Café – Sturminster Newton, Dorset. Breakfast, lunch, cream teas and more in the heart of the Blackmore Vale.' } = Astro.props
+const { title, description = 'Poets Corner Café – Sturminster Newton, Dorset. Breakfast, lunch and more in the heart of the Blackmore Vale.' } = Astro.props
 
 const nav = [
   { href: '/', label: 'Home' },
@@ -15,13 +15,17 @@ const nav = [
 ]
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
+const isActive = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href)
 ---
 <!doctype html>
 <html lang="en" class="min-h-full scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>{title} | Poets Corner Café</title>
     <meta name="description" content={description} />
     <style is:global>
@@ -41,23 +45,18 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
 
         <!-- Desktop nav -->
         <nav class="hidden md:flex flex-wrap gap-1">
-          {nav.map(({ href, label }) => {
-            const active = href === '/'
-              ? currentPath === '/'
-              : currentPath.startsWith(href)
-            return (
-              <a
-                href={href}
-                class={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  active
-                    ? 'bg-amber-400 text-stone-800'
-                    : 'text-amber-100 hover:bg-stone-700'
-                }`}
-              >
-                {label}
-              </a>
-            )
-          })}
+          {nav.map(({ href, label }) => (
+            <a
+              href={href}
+              class={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive(href)
+                  ? 'bg-amber-400 text-stone-800'
+                  : 'text-amber-100 hover:bg-stone-700'
+              }`}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
 
         <!-- Mobile burger button -->
@@ -79,23 +78,18 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
         class="md:hidden hidden border-t border-stone-700"
       >
         <nav class="flex flex-col px-4 py-3 gap-1">
-          {nav.map(({ href, label }) => {
-            const active = href === '/'
-              ? currentPath === '/'
-              : currentPath.startsWith(href)
-            return (
-              <a
-                href={href}
-                class={`px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${
-                  active
-                    ? 'bg-amber-400 text-stone-800'
-                    : 'text-amber-100 hover:bg-stone-700'
-                }`}
-              >
-                {label}
-              </a>
-            )
-          })}
+          {nav.map(({ href, label }) => (
+            <a
+              href={href}
+              class={`px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                isActive(href)
+                  ? 'bg-amber-400 text-stone-800'
+                  : 'text-amber-100 hover:bg-stone-700'
+              }`}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
@@ -103,11 +97,10 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
     <script>
       const btn = document.getElementById('menu-btn')
       const menu = document.getElementById('mobile-menu')
+      const lines = btn?.querySelectorAll('.burger-line') ?? []
       btn?.addEventListener('click', () => {
         const open = menu?.classList.toggle('hidden') === false
         btn.setAttribute('aria-expanded', String(open))
-        // Animate burger → X
-        const lines = btn.querySelectorAll('.burger-line')
         if (open) {
           lines[0]?.classList.add('rotate-45', 'translate-y-2')
           lines[1]?.classList.add('opacity-0')
