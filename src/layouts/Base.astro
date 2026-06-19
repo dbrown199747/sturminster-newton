@@ -4,8 +4,15 @@ import '@fontsource-variable/inter'
 interface Props {
   title: string
   description?: string
+  image?: string
 }
-const { title, description = 'Poets Corner Café – Sturminster Newton, Dorset. Breakfast, lunch and more in the heart of the Blackmore Vale.' } = Astro.props
+const {
+  title,
+  description = 'Poets Corner Café – Sturminster Newton, Dorset. Breakfast, lunch and more in the heart of the Blackmore Vale.',
+  image = 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=1200&q=80',
+} = Astro.props
+
+const canonicalUrl = Astro.url.href
 
 const nav = [
   { href: '/', label: 'Home' },
@@ -28,6 +35,13 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
     <link rel="manifest" href="/site.webmanifest">
     <title>{title} | Poets Corner Café</title>
     <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={`${title} | Poets Corner Café`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={image} />
     <style is:global>
       * { box-sizing: border-box; }
     </style>
